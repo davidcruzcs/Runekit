@@ -12,6 +12,8 @@
 		639B656520573067006CF7C7 /* PlayerScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B656420573067006CF7C7 /* PlayerScoreViewController.swift */; };
 		639B656720573356006CF7C7 /* HiscoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B656620573356006CF7C7 /* HiscoreManager.swift */; };
 		639B65692057360D006CF7C7 /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B65682057360D006CF7C7 /* PlayerScore.swift */; };
+		63B1C97A208E714F0052B547 /* SkillScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1C979208E714F0052B547 /* SkillScore.swift */; };
+		63B1C97C208E71A70052B547 /* MinigameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1C97B208E71A70052B547 /* MinigameScore.swift */; };
 		63B9371C2054B9410030E303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9371B2054B9410030E303 /* AppDelegate.swift */; };
 		63B937212054B9410030E303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B9371F2054B9410030E303 /* Main.storyboard */; };
 		63B937232054B9410030E303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B937222054B9410030E303 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		639B656420573067006CF7C7 /* PlayerScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreViewController.swift; sourceTree = "<group>"; };
 		639B656620573356006CF7C7 /* HiscoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiscoreManager.swift; sourceTree = "<group>"; };
 		639B65682057360D006CF7C7 /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
+		63B1C979208E714F0052B547 /* SkillScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillScore.swift; sourceTree = "<group>"; };
+		63B1C97B208E71A70052B547 /* MinigameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinigameScore.swift; sourceTree = "<group>"; };
 		63B937182054B9410030E303 /* Runekit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runekit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B9371B2054B9410030E303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B937202054B9410030E303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,9 +70,19 @@
 				639B656220572153006CF7C7 /* HiscoresViewController.swift */,
 				639B656420573067006CF7C7 /* PlayerScoreViewController.swift */,
 				639B656620573356006CF7C7 /* HiscoreManager.swift */,
-				639B65682057360D006CF7C7 /* PlayerScore.swift */,
+				63B1C976208E71110052B547 /* PlayerScore */,
 			);
 			path = Hiscores;
+			sourceTree = "<group>";
+		};
+		63B1C976208E71110052B547 /* PlayerScore */ = {
+			isa = PBXGroup;
+			children = (
+				639B65682057360D006CF7C7 /* PlayerScore.swift */,
+				63B1C979208E714F0052B547 /* SkillScore.swift */,
+				63B1C97B208E71A70052B547 /* MinigameScore.swift */,
+			);
+			path = PlayerScore;
 			sourceTree = "<group>";
 		};
 		63B9370F2054B9400030E303 = {
@@ -150,7 +164,6 @@
 				63B937152054B9400030E303 /* Frameworks */,
 				63B937162054B9400030E303 /* Resources */,
 				0F5A91289B34856BEA422CE8 /* [CP] Embed Pods Frameworks */,
-				0958711C862CF38E5415D7EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,21 +222,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0958711C862CF38E5415D7EE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Runekit/Pods-Runekit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		0F5A91289B34856BEA422CE8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,8 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				639B656520573067006CF7C7 /* PlayerScoreViewController.swift in Sources */,
+				63B1C97C208E71A70052B547 /* MinigameScore.swift in Sources */,
 				63B9371C2054B9410030E303 /* AppDelegate.swift in Sources */,
 				639B656120572145006CF7C7 /* ExchangeViewController.swift in Sources */,
+				63B1C97A208E714F0052B547 /* SkillScore.swift in Sources */,
 				63EB0F5B20571C30006302D1 /* ThemeManager.swift in Sources */,
 				639B656320572153006CF7C7 /* HiscoresViewController.swift in Sources */,
 				639B65692057360D006CF7C7 /* PlayerScore.swift in Sources */,

@@ -26,6 +26,13 @@ class HiscoresViewController: UIViewController {
     func setUpUI() {
         searchController.searchBar.tintColor = ThemeManager.shared.getThemeColor()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToPlayerFromHiscores" {
+            let vc = segue.destination as! PlayerScoreViewController
+            vc.playerName = sender as! String
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,10 +41,12 @@ class HiscoresViewController: UIViewController {
 
 }
 
-extension HiscoresViewController: UISearchResultsUpdating {
+extension HiscoresViewController: UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate {
     func setUpSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Player"
         navigationItem.searchController = searchController
@@ -46,9 +55,8 @@ extension HiscoresViewController: UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO
         if !searchBarIsEmpty() {
-            print(searchController.searchBar.text!)
+            //TODO: filter search history by input
         }
     }
     
@@ -64,6 +72,15 @@ extension HiscoresViewController: UISearchResultsUpdating {
             return true
         }
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if !searchBarIsEmpty() {
+            if let text = searchBar.text {
+                self.performSegue(withIdentifier: "GoToPlayerFromHiscores", sender: text)
+            }
+        }
+    }
+    
 }
 
 extension HiscoresViewController: UITableViewDelegate, UITableViewDataSource {
